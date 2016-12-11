@@ -7,12 +7,11 @@ import routes from './routes';
 import * as petActions from './actions/petActions';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
-
 import configureStore from './store/configureStore';
 
 const store = configureStore();
 
-store.dispatch(petActions.fetchPets());
+store.dispatch(petActions.fetchPets(10, 1));
 
 render(
     <Provider store={store}>
