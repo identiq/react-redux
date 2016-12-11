@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 
 const Loader = ({loading}) => {
 
@@ -7,6 +7,10 @@ const Loader = ({loading}) => {
     return (
         <div style={loadingStyle} className="alert alert-info">Loading...</div>
     );
+};
+
+Loader.propTypes = {
+    loading: PropTypes.bool.isRequired
 };
 
 export default Loader;

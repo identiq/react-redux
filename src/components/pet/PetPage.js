@@ -92,6 +92,7 @@ Pet.propTypes = {
     createPet: PropTypes.func.isRequired,
     removePet: PropTypes.func.isRequired,
     paginatePet: PropTypes.func.isRequired,
+    dispatch: PropTypes.func.isRequired
 };
 
 const mapStateToProps = (state) => {
@@ -105,6 +106,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
+        dispatch: dispatch,
         clearPet: () => dispatch(petActions.clearPet()),
         createPet: pet => dispatch(petActions.createPet(pet)),
         removePet: petId => dispatch(petActions.removePet(petId)),

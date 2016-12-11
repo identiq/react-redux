@@ -1,4 +1,4 @@
-import React  from 'react';
+import React, {PropTypes}  from 'react';
 import {Link} from 'react-router';
 
 const App = (props) => {
@@ -20,6 +20,10 @@ const App = (props) => {
             {props.children}
         </div>
     );
+};
+
+App.propTypes = {
+    children: PropTypes.node
 };
 
 export default App;

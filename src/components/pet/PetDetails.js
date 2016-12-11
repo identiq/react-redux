@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 
 const PetDetails = ({pet}) => {
     return (
@@ -19,5 +19,10 @@ const PetDetails = ({pet}) => {
         </div>
     );
 };
+
+PetDetails.propTypes = {
+    pet: PropTypes.object.isRequired
+};
+
 
 export default PetDetails;

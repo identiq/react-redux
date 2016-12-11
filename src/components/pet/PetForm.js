@@ -1,5 +1,5 @@
-import React from 'react';
-import { createForm } from 'redux-form-utils';
+import React, {PropTypes} from 'react';
+import {createForm} from 'redux-form-utils';
 import petFormConfig from '../../utils/petFormConfig';
 
 @createForm(petFormConfig)
@@ -10,7 +10,7 @@ class PetForm extends React.Component {
 
     render() {
 
-        const { name, age, breed, price } = this.props.fields;
+        const {name, age, breed, price} = this.props.fields;
 
         return (
             <form className="form-horizontal" onSubmit={e => {
@@ -72,5 +72,11 @@ class PetForm extends React.Component {
         );
     }
 }
+
+PetForm.propTypes = {
+    fields: PropTypes.object.isRequired,
+    submitPet: PropTypes.func.isRequired,
+    clearAll: PropTypes.func.isRequired
+};
 
 export default PetForm;

@@ -39,7 +39,8 @@ PetDetailsPage.propTypes = {
     loading: PropTypes.bool.isRequired,
     fetchPetById: PropTypes.func.isRequired,
     updatePet: PropTypes.func.isRequired,
-    params: PropTypes.object.isRequired
+    params: PropTypes.object.isRequired,
+    dispatch: PropTypes.func.isRequired
 };
 
 const mapStateToProps = (state) => {
@@ -51,9 +52,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
+        dispatch: dispatch,
         fetchPetById: petId => dispatch(petActions.fetchPetById(petId)),
         updatePet: (petId, pet) => dispatch(petActions.updatePet(petId, pet))
-
     };
 };
 
